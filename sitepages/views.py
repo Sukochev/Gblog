@@ -4,6 +4,9 @@ from .models import Sitepages
 
 
 # Create your views here.
+def cover(request):
+    return render(request, 'sitepages/cover.html')
+
 def about(request):
     return render(request, 'sitepages/about.html')
 
@@ -18,10 +21,3 @@ def view3(request):
 
 
    
- """ random()
- if random == 1
-    return http://www.numberphile.com/
-elif random == 2
-    return http://www.sixtysymbols.com/
-elif random == 3
- """

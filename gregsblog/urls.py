@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^view1/', sitepages.views.view1, name="view1"),
     url(r'^view2/', sitepages.views.view2, name="view2"),
     url(r'^view3/', sitepages.views.view3, name="view3"),
+    url(r'^cover/', sitepages.views.cover, name="cover"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT,)
 
 
