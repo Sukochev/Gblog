@@ -9,9 +9,8 @@
     <style type="text/css">
         canvas {
             border: 1px solid black;
-            background: white;
+            background: black;
         }
-
 
         body {
             margin: 0;
@@ -53,8 +52,8 @@
 </head>
 
 <body>
-    <canvas id="canvas">Your browser does not support HTML5 Canvas property.</canvas>
-    <script src="{% static 'sitepages/cover.js' %}"></script>
+    <canvas>Your browser does not support HTML5 Canvas property.</canvas>
+    <script src="{% static 'sitepages/triangles.js' %}"></script>
     
     <div class="main_title">
         <a href="{% url 'home' %}" >Greg's Tech Blog</a>

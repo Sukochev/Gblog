@@ -7,6 +7,15 @@ from .models import Sitepages
 def cover(request):
     return render(request, 'sitepages/cover.html')
 
+def cover_triangles(request):
+    return render(request, 'sitepages/cover_triangles.html')
+
+def cover_rainbow_circles(request):
+    return render(request, 'sitepages/cover_rainbow_circles.html')
+
+def cover_coswaves(request):
+    return render(request, 'sitepages/cover_coswaves.html')
+
 def about(request):
     return render(request, 'sitepages/about.html')
 
@@ -21,3 +30,11 @@ def view3(request):
 
 
    
+def starshower(request):
+    return render(request, 'sitepages/starshower.html')
+
+def spinstars(request):
+    return render(request, 'sitepages/spinstars.html')
+
+def demo(request):
+    return render(request, 'sitepages/demo.html')

@@ -4,40 +4,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cover Piece</title>
-
-    <style type="text/css">
-        canvas {
-            border: 1px solid black;
-            background: white;
-        }
-
-
+    <title>Starshower</title>
+    <style>
         body {
             margin: 0;
+            background: "#182028";
         }
 
         .main_title {
-            font-size: 75px;
+            font-size: 15px;
             font-family: 'Verdana';
             color: #d94761;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 98%;
+            left: 51%;
             transform: translate(-50%, -50%);
             z-index: 1;
         }
 
-        a {
-            color: #d94761;
+         a {
+            color: #384551;
         }
         
         a:visited {
-            color: #d94761;
+            color: #384551;
         }
 
         a:link {
-            color: #d94761;
+            color: #384551;
         }
 
         a:hover {
@@ -47,15 +41,12 @@
         a:active {
             color: #F2D03B;
         }
-
-    
     </style>
 </head>
-
 <body>
     <canvas id="canvas">Your browser does not support HTML5 Canvas property.</canvas>
-    <script src="{% static 'sitepages/cover.js' %}"></script>
-    
+    <script src="{% static 'sitepages/starshower.js' %}"></script>
+
     <div class="main_title">
         <a href="{% url 'home' %}" >Greg's Tech Blog</a>
     </div>
