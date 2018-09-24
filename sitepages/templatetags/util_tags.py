@@ -11,4 +11,3 @@ def random_url():
     list_of_route_names = ['view1', 'view2', 'view3'] # names from urls.py
     return reverse(random.choice(list_of_route_names))
 
-    
