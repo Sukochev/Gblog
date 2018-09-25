@@ -35,6 +35,8 @@ canvas.height = myHeight;
 
 
 // Event Listeners
+
+// This listener is for parallax scrolling
 window.addEventListener('scroll', function() {
     
     let scrollToop = window.pageYOffset;
@@ -53,7 +55,7 @@ window.addEventListener('scroll', function() {
 
 
 
-
+//This is for maintaining animation upon screen resizing
 addEventListener('resize', () => {
     canvas.width = myWidth;
     canvas.height = myHeight;
@@ -62,6 +64,7 @@ addEventListener('resize', () => {
 })
 
 // Objects
+//This Object is the basis for the initial firework as well as the sparks
 function Circle(x, y, radius, firework) {
     this.x = x;
     this.y = y;
@@ -78,7 +81,7 @@ function Circle(x, y, radius, firework) {
 }}
     this.gravity = 0.45;
     this.lifespan = 300;
-    this.opacity = 1;
+    this.opacity = 1; // The flash you see as the firework dissapears is a result of the opacity.
     //this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
     
     
@@ -116,13 +119,14 @@ function Circle(x, y, radius, firework) {
     }
 }
 
+//This object manages the sparks after explosion.
 function Firework() {
 
     this.firework = new Circle(myWidth * Math.random(), canvas.height + 10, 2.4, true);
     this.exploded = false;
-    this.particles = []
+    this.particles = []  //The explode function pushes Circles into the particles array. Their behaviour is managed by draw and update fns.
     
-    
+    //This sets up the splicing of objects from the array later
     this.done = function() {
         if (this.exploded && this.particles.length === 0) {
             return true;
@@ -175,7 +179,7 @@ var colorArray = [
     '#00A1D9',
     '#47D9BF',
     '#F2D03B',
-];
+]; //Currently not utilised.
 
 let fireworks
 

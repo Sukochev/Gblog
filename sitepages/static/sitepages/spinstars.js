@@ -11,7 +11,7 @@ var c = canvas.getContext('2d');
 
 
 
-
+//Handles screen resizing
 addEventListener('resize', () => {
     canvas.width = innerWidth
     canvas.height = innerHeight
@@ -19,6 +19,7 @@ addEventListener('resize', () => {
     init()
 })
 
+//Restarts the animation upon mousedown
 window.addEventListener('mousedown', init, false);
 //window.addEventListener('mousedown', setTime);
 
@@ -26,6 +27,7 @@ window.addEventListener('mousedown', init, false);
 
 // Objects
 
+//This Spark object is currently not being used, but I can create sparks that explode when the Big Star reaches the right end of the screen.
 function Spark(x, y, radius) {
     this.x = x;
     this.y = y;
@@ -52,7 +54,7 @@ Spark.prototype.draw = function() {
 
 Spark.prototype.update = function() {
     
-    //When ball hits bottom of screen
+    //When sparks hit bottom of screen
         if (this.y + this.radius + this.velocity.y > canvas.height) {
             this.velocity.y = -this.velocity.y * this.friction
         } 
@@ -73,7 +75,7 @@ Spark.prototype.update = function() {
     }
 
 
-
+//This object creates our Big Star and easily lets us change the number of points on it.
 function Pentagon(numberOfSides, dradians, size, Xcenter, Ycenter, step, shift, color, dx, dy, dd) {
     this.numberOfSides = numberOfSides;
     this.dradians = dradians;
@@ -95,9 +97,9 @@ function Pentagon(numberOfSides, dradians, size, Xcenter, Ycenter, step, shift, 
 Pentagon.prototype.draw = function() {
     c.save()
     c.beginPath();
-    //c.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));   
+     
 
-    //The below section is for the motion trails
+    //The below section is for the motion trails. I use the numbers in the two arrays historyx and historyy as position points for the trails.
     for (i = 0, j = 0, rad = 10; i < this.historyx.length, j < this.historyy.length, rad < 70; i++, j++, rad += 1) {
         
         if (this.historyx[i] === this.historyx[i+2]) {
@@ -117,7 +119,7 @@ Pentagon.prototype.draw = function() {
         
     } //End motion trails
 
-    //This section is for the Pentagon/Big Star
+    //This section is for drawing the Pentagon/Big Star
     for (var i = 0; i <= this.numberOfSides; i++) {
         var curStep = i * this.step + this.shift;
         c.lineTo (this.Xcenter + this.size * Math.cos(curStep), this.Ycenter + this.size * Math.sin(curStep));
@@ -146,7 +148,8 @@ Pentagon.prototype.draw = function() {
 
 //Update function handles movement rules
 Pentagon.prototype.update = function() {
- 
+    
+    //This gets our Big Stars to stop and spin slower
     if (this.Xcenter + this.size + (canvas.width / 51) > canvas.width) {
         this.dx = 0;
         this.dd = -5;
@@ -158,11 +161,11 @@ Pentagon.prototype.update = function() {
     this.Xcenter += this.dx;
     this.shift += this.dd;
 
-   
+    //Filling the two arrays for motion trails
     this.historyx.push(this.Xcenter);
     this.historyy.push(this.Ycenter)
     
-
+    //Splicing motion trails
     if (this.historyx.length > 42) {
         this.historyx.splice(0, 1);
     }
@@ -176,14 +179,6 @@ Pentagon.prototype.update = function() {
     
     
 }
-
-// Motion Trails set up
-
-
-
-
-      
-//End of Motion Trail Set up
 
 
 // Implementation - creating a number of objects in a particular way
@@ -203,7 +198,7 @@ let sparks = []
 function init() {
     starArray = []
     
-   
+    // Here i, lets us create 3 Big Stars, we have pretty good control over appearance. The shift handles spin.
     for (let i = 0, Ycenter = innerHeight / 3 - 50; i < 3; i++, Ycenter += size *2) {
         var numberOfSides = 5;
         var    dradians = -18;
@@ -223,6 +218,7 @@ function init() {
     } 
 }
 
+//Currently not using this function, but can cause sparks to appear.
 function init2() { 
     sparks = []
         
@@ -242,7 +238,8 @@ function init2() {
         //console.log(sparks.length)
     }   
 
- function setTime() { setTimeout(init2, 1640) };
+//Handles when sparks appear (I had to set it to a timer rather than an event)
+function setTime() { setTimeout(init2, 1640) };
 
 
 // Animation Loop
@@ -251,6 +248,7 @@ function animate() {
     c.fillStyle = backgroundGradient;
     c.fillRect(0, 0, canvas.width, canvas.height)
 
+    //Currently not in use
     sparks.forEach((spark) => {
         spark.update();
         if (spark.ttl == 0) {

@@ -37,6 +37,8 @@ addEventListener('resize', () => {
 })
 
 // Objects
+
+//This object is used for both the Big falling star and the background stars in the sky.
 function Star(x, y, radius, color) {
     this.x = x
     this.y = y
@@ -93,6 +95,7 @@ Star.prototype.shatter = function() {
     }
 }
 
+//This constructor function allows us to implement little sparks upon landing
 function MiniStar(x, y, radius, color) {
     Star.call(this, x, y, radius, color)
     this.velocity = {
@@ -228,10 +231,7 @@ function init() {
     miniStars = []
     backgroundStars = []
 
-    // for (let i = 0; i < 1; i++) {
-    //     stars.push(new Star(canvas.width/2, 30, 30, '#E3EAEF'));
-    //}
-
+    //Creating background stars in the sky
     for (let i = 0; i < 50; i++) {
         const x = Math.random() * canvas.width
         const y = Math.random() * (canvas.height / 3)
@@ -258,7 +258,7 @@ function animate() {
     c.fillStyle = "#182028";
     c.fillRect(0, canvas.height - groundHeight, canvas.width, groundHeight);
     
-    
+    //Getting rid of our stars
     stars.forEach((star, index) => {
         star.update();
         if (star.radius == 0) {

@@ -94,6 +94,7 @@ window.addEventListener('resize',
     init();
 });
 
+//Our main object
 function Circle(x, y, dx, dy, radius) {
     this.x = x;
     this.y = y;
@@ -110,6 +111,7 @@ function Circle(x, y, dx, dy, radius) {
         c.fill();
     }
 
+    //This handles the physics of the circles
     this.update = function() {
         if (this.x + radius > innerWidth || this.x - this.radius < 0) {
             this.dx = -this.dx
@@ -140,7 +142,7 @@ function Circle(x, y, dx, dy, radius) {
 var circleArray = [];
 
 
-
+//Implementation and creation of objects
 function init() {
 
     circleArray = [];
@@ -173,11 +175,6 @@ init();
 animate();
 
 
-// c.font = '75px Verdana, sans serif';
-//     c.fillStyle = 'black';
-//     c.textAlign = 'center';
-//     c.fillText("Greg's Tech Blog", innerWidth/2, innerHeight/2);
-//     c.strokeText("Greg's Tech Blog", innerWidth/2 +3, innerHeight/2 +3);
 
 
 

@@ -36,6 +36,7 @@ function Triangle(x1, y1, x2, y2, x3, y3, dx, dy) {
         
     }
 
+    //This handles the physics of our Triangle object
     this.update = function() {
         if (this.x1 > innerWidth || this.x1 < 0) {
             this.dx = -this.dx;
@@ -69,6 +70,7 @@ function Triangle(x1, y1, x2, y2, x3, y3, dx, dy) {
     
 }
 
+//Implementation
 var triangleArray = [];
 
 function init() {
