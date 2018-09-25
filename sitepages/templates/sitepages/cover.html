@@ -18,6 +18,7 @@
         }
 
         .main_title {
+            text-align: center;
             font-size: 75px;
             font-family: 'Verdana';
             color: #d94761;
@@ -26,6 +27,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
+        }
+
+        p {
+            padding: 0;
+            font-size: 12px;
         }
 
         a {
@@ -58,6 +64,7 @@
     
     <div class="main_title">
         <a href="{% url 'home' %}" >Greg's Tech Blog</a>
+        <p>Click for Night | Doubleclick for Day</p>
     </div>
 </body>
 </html>

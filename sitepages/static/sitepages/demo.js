@@ -43,11 +43,11 @@ window.addEventListener('scroll', function() {
 
     let m = this.document.getElementById("backpic1"), b = m.style;
     
-    b.backgroundPositionY = -(scrollToop*0.5) + "px"
+    b.backgroundPositionY = -(scrollToop*1.5) + "px"
 
     let n = this.document.getElementById("backpic2"), bb = n.style;
 
-    bb.backgroundPositionY = -(scrollToop/2.5) + "px"
+    bb.backgroundPositionY = -(scrollToop*1.0) + "px"
    
 });
 

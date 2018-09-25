@@ -44,12 +44,13 @@ img {
     
 }
 
-
+/* Footer Section */
 
 .main_title {
+    text-align: center;
     font-size: 15px;
     font-family: Verdana, Tahoma, sans-serif;
-    color: #d94761;
+    color: #384551;
     position: absolute;
     top: 98%;
     left: 51%;
@@ -57,7 +58,13 @@ img {
     z-index: 1;
 }
 
- a {
+p {
+    padding-bottom: 1em;
+    font-size: 12px;
+}
+
+a {
+    padding-bottom: 0;
     color: #384551;
 }
 
