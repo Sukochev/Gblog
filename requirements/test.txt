@@ -1,0 +1,5 @@
+-r base.txt
+tox
+
+coverage==4.5.3
+factory_boy==2.12.0
