@@ -1,6 +1,4 @@
 from django.db import models
-from random import randint
-from random import choice
 
 
 # Create your models here.
@@ -10,10 +8,3 @@ class Sitepages(models.Model):
 
     def __str__(self):
         return self.title
-
-   # def random1():
-    #    return choice([http://www.numberphile.com/, http://www.sixtysymbols.com/, href="{% url 'surprise' %}"])
-        
-        
-
- 
