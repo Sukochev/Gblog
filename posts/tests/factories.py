@@ -1,10 +1,10 @@
 from io import BytesIO
 
+import factory
 import pytz
+from factory.django import DjangoModelFactory
 from PIL import Image
 
-import factory
-from factory.django import DjangoModelFactory
 from posts.models import Post
 
 
