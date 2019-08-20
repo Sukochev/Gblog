@@ -14,10 +14,7 @@ import os
 from typing import Iterable
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
-CONFIG_DIR = os.path.dirname(SETTINGS_DIR)
-PROJECT_DIR = os.path.dirname(CONFIG_DIR)
-BASE_DIR = os.path.dirname(PROJECT_DIR)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +26,7 @@ SECRET_KEY = "b)b^fu5j0u2ka)cb@u%%()8zld^l5hv0sw5*k6jj&duthn7sjn"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS: Iterable[str] = ["149.28.163.127", "gregsukochev.net", "127.0.0.1"]
+ALLOWED_HOSTS = ["149.28.163.127", "gregsukochev.net", "127.0.0.1"]
 
 # Application definition
 
@@ -122,7 +119,5 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 
-MEDIA_URL = "/pics/"
-MEDIA_ROOT = BASE_DIR
-
-TEST_MODE = False
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
