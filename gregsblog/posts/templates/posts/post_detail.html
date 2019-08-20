@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Greg's Tech Blog</title>
+    </head>
+    <body>
+        {% load util_tags %}
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}">Greg's Tech Blog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="{% url 'sitepages:about' %}">About</a>
+                    <a class="nav-item nav-link" href="https://en.wikipedia.org/wiki/Grigory_Sukochev">Wiki</a>
+                    <a class="nav-item nav-link" href="{% random_url %}">Surprise</a>
+                    <a class="nav-item nav-link active" href="http://149.28.175.75/" target="_blank">Number Quest</a>
+                    <a class="nav-item nav-link" href="{% url 'sitepages:demo' %}">Example Website</a>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cover Pages
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{% url 'sitepages:spinstars' %}">Spin-Stars</a>
+                            <a class="dropdown-item" href="{% url 'sitepages:starshower' %}">Starshower</a>
+                            <a class="dropdown-item" href="{% url 'sitepages:cover_triangles' %}">Triangles</a>
+                            <a class="dropdown-item" href="{% url 'sitepages:cover_coswaves' %}">Sinewaves</a>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+<div class="container">
+<br />
+<br />
+<h3><u>{{ post.title }}</u></h3>
+{{ post.pub_date_pretty }}
+<br />
+<br />
+<img src="{{ post.image.url }}" class="img-fluid rounded mx-auto d-block" style="max-height:450px;" alt="Picture here" />
+<br />
+<br />
+
+{{ post.body|linebreaks }}
+<br />
+<br />
+<br />
+      <div id="disqus_thread"></div>
+      <script>
+
+    
+      var disqus_config = function () {
+      this.page.identifier = 'post-{{ post.id }}'; 
+      };
+     
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blogsight.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                  
+
+</div>
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    </body>
+</html>

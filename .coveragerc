@@ -1,0 +1,13 @@
+[run]
+source =
+	gregsblog
+omit =
+	*/migrations/*
+	*/tests.py
+	*/tests/*
+	gregsblog/gregsblog/settings/*
+    gregsblog/gregsblog/storage.py
+	gregsblog/gregsblog/wsgi.py
+	gregsblog/gregsblog/utils/test/*
+	gregsblog/manage.py
+	

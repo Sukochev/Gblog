@@ -19,3 +19,16 @@ venv.bak/
 
 *.py[cod]
 __pycache__/
+
+htmlcov/
+media/
+__pycache__
+
+/.tox/
+
+/.mypy_cache/
+/htmlcov/
+/gregblog/htmlcov
+/gregsblog/.coverage
+/.isort.cfg
+/.coverage
