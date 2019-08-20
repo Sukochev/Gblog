@@ -8,5 +8,5 @@ register = template.Library()
 
 @register.simple_tag
 def random_url():
-    list_of_route_names = ["view1", "view2", "view3"]  # names from urls.py
+    list_of_route_names = ["sitepages:view1", "sitepages:view2", "sitepages:view3"]  # names from urls.py
     return reverse(random.choice(list_of_route_names))  # nosec

@@ -20,20 +20,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="{% url 'about' %}">About</a>
+                    <a class="nav-item nav-link active" href="{% url 'sitepages:about' %}">About</a>
                     <a class="nav-item nav-link" href="https://en.wikipedia.org/wiki/Grigory_Sukochev">Wiki</a>
                     <a class="nav-item nav-link" href="{% random_url %}">Surprise</a>
                     <a class="nav-item nav-link active" href="http://149.28.175.75/" target="_blank">Number Quest</a>
-                    <a class="nav-item nav-link" href="{% url 'demo' %}">Example Website</a>
+                    <a class="nav-item nav-link" href="{% url 'sitepages:demo' %}">Example Website</a>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cover Pages
                           </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{% url 'starshower' %}">Starshower</a>
-                            <a class="dropdown-item" href="{% url 'cover_triangles' %}">Triangles</a>
-                            <a class="dropdown-item" href="{% url 'cover_coswaves' %}">Sinewaves</a>
-                            <a class="dropdown-item" href="{% url 'cover_rainbow_circles' %}">Colour-cles</a>
+                            <a class="dropdown-item" href="{% url 'sitepages:starshower' %}">Starshower</a>
+                            <a class="dropdown-item" href="{% url 'sitepages:cover_triangles' %}">Triangles</a>
+                            <a class="dropdown-item" href="{% url 'sitepages:cover_coswaves' %}">Sinewaves</a>
+                            <a class="dropdown-item" href="{% url 'sitepages:cover_rainbow_circles' %}">Colour-cles</a>
                           </div>
                     </div>
                   </div>

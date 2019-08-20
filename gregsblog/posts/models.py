@@ -16,3 +16,5 @@ class Post(models.Model):
 
     def summary(self):
         return self.body[:100]
+
+    objects = models.Manager()  # To eliminate local pylint errors

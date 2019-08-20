@@ -4,7 +4,6 @@ import factory
 import pytz
 from factory.django import DjangoModelFactory
 from PIL import Image
-
 from posts.models import Post
 
 

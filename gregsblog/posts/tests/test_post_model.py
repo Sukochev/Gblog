@@ -1,5 +1,4 @@
 from django.test import TestCase
-
 from posts.tests.factories import PostFactory
 
 
