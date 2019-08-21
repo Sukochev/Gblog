@@ -68,7 +68,7 @@
     <img src="{{ post.image.url }}" class="img-fluid rounded mx-auto d-block" style="max-height:200px;"alt="Picture here" />
     <br />
     <br />
-    {{ post.summary }}
+    {{ post.summary }}  <a href="{% url 'post_detail' post.id %}">Continue Reading</a>
     <br />
     <br />
     <br />

@@ -26,5 +26,5 @@ class PostModelSummaryTestCase(TestCase):
         self.post = PostFactory.create(title="Test Post", body=self.body)
 
     def test_summary(self):
-        self.assertEqual(100, len(self.post.summary()))
-        self.assertEqual("x" * 100, self.post.summary())
+        self.assertEqual(104, len(self.post.summary()))
+        self.assertEqual("x" * 100 + " ...", self.post.summary())
