@@ -5,43 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Starshower</title>
-    <style>
-        body {
-            margin: 0;
-            background: "#182028";
-        }
-
-        .main_title {
-            font-size: 15px;
-            font-family: 'Verdana';
-            color: #d94761;
-            position: absolute;
-            top: 98%;
-            left: 51%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-
-         a {
-            color: #384551;
-        }
-        
-        a:visited {
-            color: #384551;
-        }
-
-        a:link {
-            color: #384551;
-        }
-
-        a:hover {
-            color: #47d9bf;
-        }
-
-        a:active {
-            color: #F2D03B;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/starshower.css' %}"/>
 </head>
 <body>
     <canvas id="canvas">Your browser does not support HTML5 Canvas property.</canvas>

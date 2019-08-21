@@ -27,7 +27,8 @@ window.addEventListener('mousedown', init, false);
 
 // Objects
 
-//This Spark object is currently not being used, but I can create sparks that explode when the Big Star reaches the right end of the screen.
+//This Spark object is currently not being used,
+// but I can create sparks that explode when the Big Star reaches the right end of the screen.
 function Spark(x, y, radius) {
     this.x = x;
     this.y = y;
@@ -99,7 +100,8 @@ Pentagon.prototype.draw = function() {
     c.beginPath();
      
 
-    //The below section is for the motion trails. I use the numbers in the two arrays historyx and historyy as position points for the trails.
+    //The below section is for the motion trails.
+    // I use the numbers in the two arrays historyx and historyy as position points for the trails.
     for (i = 0, j = 0, rad = 10; i < this.historyx.length, j < this.historyy.length, rad < 70; i++, j++, rad += 1) {
         
         if (this.historyx[i] === this.historyx[i+2]) {

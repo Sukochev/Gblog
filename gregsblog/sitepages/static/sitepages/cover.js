@@ -48,14 +48,20 @@ var mouse = {
 }
 
 var maxRadius = 50;
-//var minRadius = 10;
+
+// var colorArray = [
+//     '#003056',
+//     '#04518C',
+//     '#00A1D9',
+//     '#47D9BF',
+//     '#F2D03B',
+// ];
 
 var colorArray = [
-    '#003056',
-    '#04518C',
-    '#00A1D9',
-    '#47D9BF',
-    '#F2D03B',
+    '#FFD700',
+    '#FFDF33',
+    '#FFBF00',
+    '#00b3fa',
 ];
 
 window.addEventListener('click', changeBack, false);
