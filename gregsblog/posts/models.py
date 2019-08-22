@@ -15,6 +15,7 @@ class Post(models.Model):
         return self.pub_date.strftime("%b %d %Y")
 
     def summary(self):
-        return f"{self.body[:100]} ..."
+        summary = self.body[:100]
+        return "{} ...".format(summary)
 
     objects = models.Manager()  # To eliminate local pylint errors
