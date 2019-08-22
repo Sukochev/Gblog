@@ -65,7 +65,7 @@ h1, h2, h3, p {
     position: absolute;
     padding: 0;
     margin: 0;
-    background: #edf0eb url('images/back112.png');
+    background: #edf0eb url('../sitepages/images/back112.png');
     background-position: center center;
     background-repeat: repeat-y;
     background-size: cover;
@@ -157,7 +157,7 @@ h1, h2, h3, p {
     position: absolute;
     padding: 0;
     margin: 0;
-    background: #edf0eb url('images/back2.png');
+    background: #edf0eb url('../sitepages/images/back2.png');
     background-position: center center;
     background-repeat: repeat-y;
     background-size: cover;

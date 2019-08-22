@@ -54,7 +54,7 @@
     {% load static %}
     
     <a href="{% url 'cover' %}">
-    <img src="{% static 'posts/home.jpg' %}" class="img-fluid rounded mx-auto d-block" style="max-height:350px;"  /></a>
+    <img src="{% static 'posts/images/home.jpg' %}" class="img-fluid rounded mx-auto d-block" style="max-height:350px;"  /></a>
     <br />
     <h2>Latest Posts</h2>
     <hr />
@@ -68,7 +68,7 @@
     <img src="{{ post.image.url }}" class="img-fluid rounded mx-auto d-block" style="max-height:200px;"alt="Picture here" />
     <br />
     <br />
-    {{ post.summary }}
+    {{ post.summary }}  <a href="{% url 'post_detail' post.id %}">Continue Reading</a>
     <br />
     <br />
     <br />
