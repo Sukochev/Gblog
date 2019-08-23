@@ -13,6 +13,7 @@
     <title>Greg's Tech Blog</title>
   </head>
   <body>
+      {% load markdownify %}
       {% load util_tags %} 
       <!-- Nav Bar done with Bootsrap -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -68,7 +69,7 @@
     <img src="{{ post.image.url }}" class="img-fluid rounded mx-auto d-block" style="max-height:200px;"alt="Picture here" />
     <br />
     <br />
-    {{ post.summary }}  <a href="{% url 'post_detail' post.id %}">Continue Reading</a>
+    {{ post.summary | markdown | safe }}  <a href="{% url 'post_detail' post.id %}">Continue Reading</a>
     <br />
     <br />
     <br />
