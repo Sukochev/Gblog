@@ -2,7 +2,7 @@
 django==2.2.3
 
 # Images
-Pillow==6.1.0
+Pillow==6.2.0
 
 # Text formatting
 mistune==0.8.4
