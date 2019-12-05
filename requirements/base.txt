@@ -1,5 +1,5 @@
 # Core
-django==2.2.3
+django==2.2.8
 
 # Images
 Pillow==6.1.0
