@@ -1,14 +1,13 @@
-from django.shortcuts import get_object_or_404, render
+from django.views.generic import DetailView, ListView
 
 from .models import Post
 
 
-# Create your views here.
-def home(request):
-    posts = Post.objects.order_by("-pub_date")
-    return render(request, "posts/home.html", {"posts": posts})
+class PostsListView(ListView):
+    queryset = Post.published.all()
+    template_name = "posts/home.html"
 
 
-def post_details(request, post_id):
-    post = get_object_or_404(Post, pk=post_id)
-    return render(request, "posts/post_detail.html", {"post": post})
+class PostsDetailView(DetailView):
+    queryset = Post.published.all()
+    template_name = "posts/post_detail.html"

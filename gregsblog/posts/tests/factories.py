@@ -22,3 +22,4 @@ class PostFactory(DjangoModelFactory):
     pub_date = factory.Faker("iso8601", tzinfo=pytz.utc, end_datetime=None)
     image = factory.django.ImageField(from_func=create_jpeg)
     body = factory.Faker("text", max_nb_chars=50, ext_word_list=None)
+    slug = "default"

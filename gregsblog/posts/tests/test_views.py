@@ -15,7 +15,7 @@ class ViewsTestCase(TestCase):
         self.assertContains(response, "Welcome to Greg's Tech Blog!")
 
     def test_post_details(self):
-        dashboard_path = reverse_lazy(f"post_detail", args=[self.post.pk])
+        dashboard_path = reverse_lazy(f"post_detail", args=[self.post.slug])
         response = self.client.get(dashboard_path)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Test Post")
