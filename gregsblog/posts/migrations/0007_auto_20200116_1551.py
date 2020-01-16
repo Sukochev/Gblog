@@ -3,19 +3,16 @@ import uuid
 from django.db import migrations
 from posts.models import Post
 
+
 def generate_uuid_slug(apps, schema_editor):
-    Post = apps.get_model('posts', 'Post')
+    Post = apps.get_model("posts", "Post")
     for post in Post.objects.all():
         post.slug = uuid.uuid4()
         post.save()
 
+
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('posts', '0003_auto_20200116_0045'),
-    ]
+    dependencies = [("posts", "0003_auto_20200116_0045")]
 
-    operations = [
-        migrations.RunPython(generate_uuid_slug),
-    ]
-    
+    operations = [migrations.RunPython(generate_uuid_slug)]

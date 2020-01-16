@@ -20,9 +20,10 @@ class Post(models.Model):
     )
     slug = models.SlugField(
         null=True,
+        unique=True,
         max_length=50,
         help_text=_(
-            "This field determines the url path of this event. "
+            "This field determines the url path of this post. "
             "It defaults to the title."
         ),
     )
