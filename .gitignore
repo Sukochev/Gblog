@@ -28,6 +28,7 @@ __pycache__
 
 /.mypy_cache/
 /htmlcov/
+/letsencrypt/
 /gregblog/htmlcov
 /gregsblog/.coverage
 /.isort.cfg
