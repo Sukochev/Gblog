@@ -4,6 +4,7 @@
 {% load static %}
 {% load markdownify %}
 {% load util_tags %}
+{% load pagination_filter %}
   
 <br>
 <div class="container">
@@ -40,23 +41,35 @@
     <br />
     {% endfor %}
 
-    <div class="text-center pb-2">
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; First</a>
-            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
+    {% if is_paginated %}
+        <div class="text-center pb-5">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?{% param_replace page=1 %}">&laquo; First</a>
+                {% if page_obj.previous_page_number != 1 %}
+                    <span class="pl-4">
+                    <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
+                    </span>
+                {% endif %}
+            {% endif %}
+        
 
-        <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            <span class="current px-4">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                {% if page_obj.next_page_number != paginator.num_pages %}
+                    <span class="pr-4">
+                        <a href="?{% param_replace page=page_obj.next_page_number %}">Next</a>
+                    </span>
+                {% endif %}
+                <a href="?{% param_replace page=paginator.num_pages %}">Last &raquo;</a>
+            {% endif %}
+            <p>Posts {{ page_obj.start_index }} - {{ page_obj.end_index }}</p>
         </span>
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
-        {% endif %}
-    </span>
-    </div>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}
 
