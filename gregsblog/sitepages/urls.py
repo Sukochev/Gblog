@@ -2,7 +2,6 @@ from django.urls import path
 from sitepages.views import (
     AboutPageView,
     CoswavesPageView,
-    DemoPageView,
     RainbowCirclesPageView,
     SpinstarsPageView,
     StarshowerPageView,
@@ -28,5 +27,4 @@ urlpatterns = [
     path("cover_coswaves/", CoswavesPageView.as_view(), name="cover_coswaves"),
     path("starshower/", StarshowerPageView.as_view(), name="starshower"),
     path("spinstars/", SpinstarsPageView.as_view(), name="spinstars"),
-    path("demo/", DemoPageView.as_view(), name="demo"),
 ]  # type: ignore

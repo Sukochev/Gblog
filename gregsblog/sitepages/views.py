@@ -39,7 +39,3 @@ class StarshowerPageView(TemplateView):
 
 class SpinstarsPageView(TemplateView):
     template_name = "sitepages/spinstars.html"
-
-
-class DemoPageView(TemplateView):
-    template_name = "sitepages/demo.html"

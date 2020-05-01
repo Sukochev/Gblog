@@ -65,9 +65,3 @@ class ViewsTestCase(TestCase):
         response = self.client.get(dashboard_path)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Spin to Win")
-
-    def test_demo(self):
-        dashboard_path = reverse_lazy("sitepages:demo")
-        response = self.client.get(dashboard_path)
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Come see the future!")
