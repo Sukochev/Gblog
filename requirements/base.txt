@@ -5,5 +5,5 @@ django==2.2.11
 Pillow==7.1.2
 
 # Text formatting
-mistune==0.8.4
+mistune==2.0.3
 Pygments==2.4.2
